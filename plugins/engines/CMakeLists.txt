@@ -20,7 +20,7 @@ endif()
 
 
 if(ADIOS2_HAVE_Hermes)
-  add_library(HermesEngine HermesEngine.cpp)
+  add_library(HermesEngine HermesEngine.cpp HermesEngine.h)
   target_link_libraries(HermesEngine
           PUBLIC
           adios_core
