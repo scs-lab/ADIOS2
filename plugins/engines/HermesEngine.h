@@ -1,0 +1,12 @@
+//
+// Created by jaime on 2/27/2023.
+//
+
+#ifndef ADIOS2_PLUGINS_ENGINES_HERMESENGINE_H_
+#define ADIOS2_PLUGINS_ENGINES_HERMESENGINE_H_
+
+class HermesEngine
+{
+};
+
+#endif // ADIOS2_PLUGINS_ENGINES_HERMESENGINE_H_

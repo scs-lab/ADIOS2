@@ -500,6 +500,16 @@ if(catalyst_FOUND)
   set(ADIOS2_HAVE_Catalyst TRUE)
 endif()
 
+#Setting up Hermes for the engine
+if(ADIOS2_USE_Hermes STREQUAL AUTO)
+  find_package(Hermes 0.9 QUIET)
+elseif(ADIOS2_USE_Hermes)
+  find_package(Hermes 0.9 REQUIRED) #TODO: Check with Luck correctness.
+endif()
+if(Hermes_FOUND)
+  set(ADIOS2_HAVE_Hermes TRUE)
+endif()
+
 # AWS S3
 if(ADIOS2_USE_AWSSDK STREQUAL AUTO)
     find_package(AWSSDK QUIET COMPONENTS s3)

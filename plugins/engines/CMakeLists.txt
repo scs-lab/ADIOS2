@@ -17,3 +17,18 @@ if(ADIOS2_HAVE_Catalyst)
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT adios2_core-development
   )
 endif()
+
+
+if(ADIOS2_HAVE_Hermes)
+  add_library(HermesEngine HermesEngine.cpp)
+  target_link_libraries(HermesEngine
+          PUBLIC
+          adios_core
+          PRIVATE
+          Hermes::hermes) #TODO: Check with luke correctness of this.
+  install(TARGETS HermesEngine  EXPORT adios2Exports
+          RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT adios2_core-runtime
+          LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT adios2_core-libraries NAMELINK_COMPONENT adios2_core-development
+          ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT adios2_core-development
+          )
+endif()
